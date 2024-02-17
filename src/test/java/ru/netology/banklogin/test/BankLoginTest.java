@@ -56,4 +56,5 @@ public class BankLoginTest {
         verificationPage.verify(verificationCode.getCode());
         verificationPage.verifyErrorNotification("Ошибка! \nНеверно указан код! Попробуйте еще раз.");
     }
+
 }
