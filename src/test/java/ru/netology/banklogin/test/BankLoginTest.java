@@ -47,13 +47,13 @@ public class BankLoginTest {
     }
 
     @Test
-    @DisplayName("Should get error notification if login with exist in base and random verification code")
+    @DisplayName("Should get error notification if login with exist in base and active user and random verification code")
     void shouldGetErrorNotificationIfLoginWithExistUserAndRandomVerificationCode() {
         var authInfo = DataHelper.getAuthInfoWithTestData();
         var verificationPage = loginPage.validLogin(authInfo);
         verificationPage.verifyVerificationPageVisiblity();
         var verificationCode = DataHelper.generateRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка! \nНеверно указан код! Попробуйте еще раз");
+        verificationPage.verifyErrorNotification("Ошибка! \nНеверно указан код! Попробуйте еще раз.");
     }
 }
